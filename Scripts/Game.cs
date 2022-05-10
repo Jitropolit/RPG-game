@@ -8,6 +8,8 @@ public class Game : Node
 
 	public override void _Ready()
 	{	
+		localPlayer.AddAttributeExperience("strength", 2.622f);
+		
 		localPlayer.AddInventoryItem("fork", 32);
 		localPlayer.AddInventoryItem("spoon", 12);
 		
@@ -23,17 +25,5 @@ public class Game : Node
 			buffer += $"\t{item.ID} / {item.UID} / {item.name} / {item.description} / {item.weight} / {item.quanity}\n";
 		}
 		GD.Print(buffer);
-//		for(int i = 0; i < 5; i++)
-//		{
-//			localPlayer.inventory.AddItem("fork", new Random().Next(1, 13));
-//			DebugLog();
-//		}
-	}
-	private void DebugLog()
-	{
-		foreach(ItemObject item in localPlayer.GetInventory().storage)
-		{
-			GD.Print($"{item.ID} / {item.UID} / {item.name} / {item.description} / {item.weight} / {item.quanity}");
-		}
 	}
 }

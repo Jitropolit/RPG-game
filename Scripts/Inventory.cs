@@ -4,6 +4,7 @@ using static Methods;
 
 public class Inventory
 {
+	#region Constructors
 	public Inventory()
 	{
 		this.weight = 0;
@@ -16,16 +17,16 @@ public class Inventory
 		this.maximumWeight = inventory.maximumWeight;
 		this.storage = inventory.storage;
 	}
+	#endregion
 	
+	#region Properties
 	public float weight { get; protected set; }
 	public float maximumWeight { get; protected set; }
 	public List<ItemObject> storage;
+	#endregion
 	
 	#region Methods
-	public void SetMaximumWeight(float maximumWeight)
-	{
-		this.maximumWeight = maximumWeight;
-	}
+	public void SetMaximumWeight(float maximumWeight) => this.maximumWeight = maximumWeight;
 	private void CalculateWeight()
 	{
 		float weightBuffer = 0;
