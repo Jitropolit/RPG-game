@@ -26,8 +26,11 @@ public abstract class Entity
 	protected void CalculateAttributes()
 	{
 		float strength = GetAttributeExperience("strength");
-		maximumHealthPoints = 100 + strength * 15;
-		inventory.SetMaximumWeight(15 + strength * 1.25f);
+		float vitality = GetAttributeExperience("vitality");
+		float toughness = GetAttributeExperience("toughness");
+		
+		maximumHealthPoints = 94 + strength * 2.5f + vitality * 3 + toughness * 0.5f;
+		inventory.SetMaximumWeight(13.7f + strength * 1.25f + toughness * 0.05f);
 	}
 	
 	public void AddInventoryItem(string ID, int quanity) => inventory.AddItem(ID, quanity);
